@@ -1,0 +1,172 @@
+<core:FragmentDefinition
+ xmlns:tnt="sap.tnt" xmlns:semantic="sap.m.semantic" xmlns:core="sap.ui.core"
+ displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+>
+<!--                           Create form                       -->
+    
+    <Dialog id="Dialog-box-create" title="person Information">
+<f:SimpleForm  id="simpleformidCreate">
+<VBox >
+<Label text="Person ID"/>
+<Input id="formpersonCreateid" placeholder="Enter Id"></Input>
+<ToolbarSpacer/>
+<Label text="Name Of The Person"/>
+<Input id="formNameCreateid" placeholder="Enter The Name"></Input>
+</VBox>
+
+</f:SimpleForm>
+<beginButton ><Button type="Emphasized" press="oAddstudentdata" text="Save"></Button></beginButton>
+<endButton> <Button press="onPressCreateBack" type="Back" text="Back"></Button></endButton>
+
+</Dialog>
+
+
+<!--                              update form                      -->
+
+  <Dialog id="Dialog-box-update" title="person Information">
+<f:SimpleForm  id="simpleformidUpdate">
+<VBox >
+<Label text="Person ID" />
+<Input id="formpersonUpdateid" placeholder="Enter Id" value="{employeeModel>/person1/id}"></Input>
+<ToolbarSpacer/>
+<Label text="Name Of The Person" />
+<Input id="formNameUpdateid" placeholder="Enter The Name" value="{employeeModel>/person1/name}"></Input>
+</VBox>
+
+</f:SimpleForm>
+<beginButton ><Button type="Neutral" press="onListUpdatePress" text="Update"></Button></beginButton>
+<endButton> <Button press="onPressUpdateBack" type="Back" text="Back"></Button></endButton>
+
+</Dialog>
+
+
+
+
+
+<!--                              delete form                      -->
+
+
+
+   <Dialog id="Dialog-box-delete" title="person Information">
+
+<f:SimpleForm  id="simpleformidDelete">
+<VBox >
+<Label text="Person ID" />
+<Input id="formpersonDeleteid" placeholder="Enter Id"></Input>
+</VBox>
+
+</f:SimpleForm>
+
+<beginButton ><Button type="Critical" press="onpressDelete" text="Delete"></Button></beginButton>
+<endButton> <Button press="onPressDeleteBack" type="Back" text="Back"></Button></endButton>
+
+</Dialog> 
+
+<!--    tables education add  dialoges   -->
+
+
+<Dialog id="addtableid" title="Employee Details">
+
+<f:SimpleForm >
+<VBox >
+<Label text="Enter your Course"></Label>
+<Input id="tablecourseid"></Input>
+<ToolbarSeparator/>
+
+<Label text="Enter your Institution Name" ></Label>
+<Input id="tableinstitutionid"></Input>
+<ToolbarSeparator/>
+
+<Label text="Enter your CGPA " ></Label>
+<Input type="Number" id="tablecgpaid"></Input>
+</VBox>
+</f:SimpleForm>
+
+<beginButton ><Button type="Emphasized" press="onPressEduAdd" text="ADD" ></Button></beginButton>
+<endButton> <Button press="onPressEduBack" type="Back" text="Back"></Button></endButton>
+</Dialog>
+
+<!--    tables employee add  dialoges   -->
+
+
+<Dialog id="empaddtableid" title="Employee Details">
+
+<f:SimpleForm >
+<VBox >
+<Label text="Enter your Company Name"></Label>
+<Input id="emptablecompanyid"></Input>
+<ToolbarSeparator/>
+
+<Label text="Enter your Role" ></Label>
+<Input id="emptableroleid"></Input>
+<ToolbarSeparator/>
+<Label text="Enter your Phone Number " ></Label>
+<Input type="Number" id="tablephoneid"></Input>
+<ToolbarSeparator/>
+<Label text="Enter your Joining date" ></Label>
+<Input type="Number" id="tablejoiningid"></Input>
+<ToolbarSeparator/>
+<Label text="Enter your Relieving date " ></Label>
+<Input placeholder="Use One '-' instead of blank feild"  id="tablerelieveid"></Input>
+</VBox>
+</f:SimpleForm>
+<beginButton ><Button type="Emphasized" press="onpressEmpAdd" text="ADD"></Button></beginButton>
+<endButton> <Button press="onPressEmpBack" type="Back" text="Back"></Button></endButton>
+</Dialog>
+
+<!--                table education  update                 -->
+
+<Dialog id="eduUpdatetableid" title="Employee Details">
+
+<f:SimpleForm >
+<VBox >
+<Label text="Enter your Course"></Label>
+<Input id="updatetablecourseid"></Input>
+<ToolbarSeparator/>
+
+<Label text="Enter your Institution Name" ></Label>
+<Input id="updatetableinstitutionid"></Input>
+<ToolbarSeparator/>
+
+<Label text="Enter your CGPA " ></Label>
+<Input type="Number" id="updatetablecgpaid"></Input>
+</VBox>
+</f:SimpleForm>
+
+<beginButton ><Button type="Neutral" press="onEduTableUpdatePress" text="Update" ></Button></beginButton>
+<endButton> <Button press="onUPressBack" type="Back" text="Back"></Button></endButton>
+</Dialog>
+
+
+
+<!--                        table employee update  -->
+
+<Dialog id="empUpdateTableid" title="Employee Details">
+
+<f:SimpleForm >
+<VBox >
+<Label text="Enter your Company Name"></Label>
+<Input id="emptableUpdateCompanyid"></Input>
+<ToolbarSeparator/>
+
+<Label text="Enter your Role" ></Label>
+<Input id="emptableUpdateroleid"></Input>
+<ToolbarSeparator/>
+<Label text="Enter your Phone Number " ></Label>
+<Input type="Number" id="tableUpdatephoneid"></Input>
+<ToolbarSeparator/>
+<Label text="Enter your Joining date" ></Label>
+<Input type="Number" id="tableUpdatejoiningid"></Input>
+<ToolbarSeparator/>
+<Label text="Enter your Relieving date " ></Label>
+<Input id="tableUpdaterelieveid"></Input>
+</VBox>
+</f:SimpleForm>
+<beginButton ><Button type="Neutral" press="onEmpTableUpdatePress" text="Update"></Button></beginButton>
+<endButton> <Button press="onPressBack" type="Back" text="Back"></Button></endButton>
+</Dialog>
+
+
+</core:FragmentDefinition>

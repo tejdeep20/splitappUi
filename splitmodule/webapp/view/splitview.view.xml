@@ -1,0 +1,160 @@
+<mvc:View xmlns:internal="sap.landvisz.internal" xmlns:tnt="sap.tnt" controllerName="splitmodule.controller.splitview"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    >
+    <!--  fragment  -->
+    
+         <core:Fragment fragmentName="splitmodule.fragment.splitdialog" type="XML"/> 
+
+
+<!--                         splitappp                           -->
+     
+
+    <SplitApp id="splitId" >
+        
+
+        <masterPages  >
+        <Page  id="masterId">
+            
+        
+ 
+        <SearchField placeholder="Search Student Name" suggest="true"  liveChange="sOnSearchSuggest" enableSuggestions="true">
+        </SearchField>
+            
+         <List mode="SingleSelectMaster" itemPress="onItemListPress" id="listId" items="{employeeModel>/person}">
+
+        <StandardListItem   id="sNameid"  type="Navigation" title="{employeeModel>name}" >
+        
+        </StandardListItem> 
+        </List>
+        
+
+        <footer>
+        <Toolbar >
+        
+        <Button id="bcreateid" press="onDialogPressCreate"                 type="Emphasized"  text="Create"/>
+        <Button id="bUpdateid" press="onDialogPressUpdate" enabled="false" type="Attention"   text="Update"/>
+        <Button id="bDeleteid" press="onListDeletePress"   enabled="false" type="Negative"    text="Delete"/>
+       
+        </Toolbar>
+        </footer>
+        
+        </Page>
+        </masterPages>
+
+
+        <!--                         detail page                                 -->
+
+
+        <detailPages >
+        <Page id="detailId"  visible="false">
+        
+        <tnt:ToolHeader height="2.5cm" >
+        
+        <VBox>
+        <HBox >
+        <Text id="identityid" text="ID:{employeeModel>/person1/id}" width="18.5cm" ></Text>
+        <Text id="cgpaid"     text="AVG-CGPA:{employeeModel>/person1/average_cgpa}"  ></Text>
+        </HBox>
+        <ToolbarSeparator/>
+        <HBox>
+        <Text id="nameid" text="NAME :{employeeModel>/person1/name}"  width="18.5cm" ></Text>
+        <Text id="expid"  text="TOTAL EXPERIENCE:{employeeModel>/person1/emp_texperience} years"  ></Text>
+        </HBox>
+        </VBox>
+         
+        </tnt:ToolHeader>
+       
+        <IconTabBar >
+        <items>
+         
+        <IconTabFilter icon="sap-icon://education" text="Education">
+
+
+    <!--                     education                   -->
+
+        <Table id="eduTableid" items="{employeeModel>/person1/education}" mode="SingleSelectMaster" selectionChange="">
+         
+        <headerToolbar>
+        <tnt:ToolHeader >
+        <Bar > <contentRight>
+
+
+        <Button press="onTableAddPress"                        id="eduSumId"   icon="sap-icon://add"></Button>
+        <Button press="onEduDeletepress"       enabled="false" id="eduMinusId" icon="sap-icon://less"></Button>
+        <Button press="onDialogEduUpdatePress" enabled="false" id="eduUpdateId" text="Update" type="Attention"></Button>
+
+
+        </contentRight></Bar>
+        </tnt:ToolHeader>
+        </headerToolbar>
+
+        <columns>
+        <Column ><Text text="COURSE" ></Text></Column>
+        <Column><Text text="INSTITUTION" ></Text></Column>
+        <Column> <Text text="CGPA" tooltip="Cumulative Grade Point Average"></Text></Column>
+        </columns>
+        <ColumnListItem >
+        <cells>
+        <Text text="{employeeModel>course}" ></Text>
+        <Text text="{employeeModel>institution}"></Text>
+        <Text text="{employeeModel>cgpa}"  ></Text>
+        </cells>
+        </ColumnListItem>
+        </Table>
+        </IconTabFilter>
+
+<!--                            Employee              -->
+
+
+        <IconTabFilter icon="sap-icon://employee" text="Employee">
+
+
+        <Table items="{employeeModel>/person1/employee}" mode="SingleSelectMaster" id="emptableid">
+        <headerToolbar>
+        <tnt:ToolHeader >
+        <Bar >
+        <contentRight>
+
+
+        <Button press="onEmpTableAddPress"                     id="empSumId" icon="sap-icon://add" ></Button>
+        <Button press="onEmpDeletepress"       enabled="false" id="empMinusId" icon="sap-icon://less"></Button>
+        <Button press="onDialogEmpUpdatePress" enabled="false" id="empUpdateId" text="Update" type="Attention"></Button>
+
+
+        </contentRight>
+        </Bar>
+        </tnt:ToolHeader>
+        </headerToolbar>
+
+        <columns>
+        <Column ><Text text="Company Name" ></Text></Column>
+        <Column> <Text text="Role" ></Text></Column>
+        <Column> <Text text="Phone"></Text></Column>
+        <Column> <Text text="Joining Date"></Text></Column>
+        <Column> <Text text="relieving Date"></Text></Column>
+        </columns>
+        <ColumnListItem >
+        <cells>
+       
+        <Text id="empNameid"     text="{employeeModel>company_name}" ></Text>
+        <Text id="empRoleid"     text="{employeeModel>role}"></Text>
+        <Text id="empPhoneid"    text="{employeeModel>phone}"  ></Text>
+        <Text id="empjoinid"     text="{employeeModel>joining_date}"  ></Text>
+        <Text id="emprelieveid"  text="{employeeModel>relieving_date}"  ></Text>
+        </cells>
+        </ColumnListItem>
+        </Table>
+        
+        </IconTabFilter>
+        
+        </items>
+        </IconTabBar>
+        </Page>
+        </detailPages>
+        </SplitApp>
+
+
+</mvc:View>
