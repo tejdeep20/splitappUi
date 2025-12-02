@@ -31,18 +31,6 @@ sap.ui.define([
                                 { company_name: "infosys", role: "developer", phone: 7981894088, joining_date: 2018, relieving_date: 2020 },
                                 { company_name: "hcl", role: "sr.developer", phone: 7981894088, joining_date: 2020, relieving_date: "-" }
 
-                            ],
-                            employee1: [
-                                { company_name: "Pivox", role: "jr.developer", phone: 7981894088, joining_date: 2016, relieving_date: 2018 },
-                                { company_name: "infosys", role: "developer", phone: 7981894088, joining_date: 2018, relieving_date: 2020 },
-                                { company_name: "hcl", role: "sr.developer", phone: 7981894088, joining_date: 2020, relieving_date: "-" }
-
-                            ],
-                            employee2: [
-                                { company_name: "Pivox", role: "jr.developer", phone: 7981894088, joining_date: 2016, relieving_date: 2018 },
-                                { company_name: "infosys", role: "developer", phone: 7981894088, joining_date: 2018, relieving_date: 2020 },
-                                { company_name: "hcl", role: "sr.developer", phone: 7981894088, joining_date: 2020, relieving_date: "-" }
-
                             ]
 
 
